@@ -1,17 +1,16 @@
 import React from 'react';
 import ReviewTemplate from './ReviewTemplate';
 
-function HardstonePsycho() {
+const HardstonePsycho = () => {
   return (
     <ReviewTemplate
-      albumId="spotify-album-id" // Replace with actual Spotify album ID
-      coverImage="/don.webp" // Replace with actual path to your album cover in the public folder
-      albumName="HARDSTONE PSYCHO"
+      albumName="Hardstone Psycho" // Ensure this matches the album name on Spotify
+      coverImage="/path-to-album-cover.jpg" // Path to the album cover image
       artistName="Don Toliver"
-      synopsis="Hardstone Psych by Don Toliver showcases his evolution in the rap scene, balancing creative prowess with stadium-worthy hip-hop tracks. The album shines when Toliver sticks to his core style, featuring collaborations with Kodak Black and Future. While some tracks venture into jarring rock influences, the album's highlights include the emotional Deep In The Water and the confident Attitude. Overall, Hardstone Psycho reinforces Don Toliver's position in rap's elite, blending familiar elements with fresh innovations."
-      rating={98}
+      synopsis="Cementing his position in rap's top tier, Don Toliver's 'Hardstone Psycho' blends core elements with fresh aspects, featuring collaborations with Kodak Black and Future. Despite some jarring rock influences, the album's highlights, like 'Deep In The Water' and 'Attitude', showcase his evolving prowess in hip-hop."
+      rating={80}
     />
   );
-}
+};
 
 export default HardstonePsycho;

@@ -1,53 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { getAlbumTracks } from '../../utils/spotify';
 import './ReviewTemplate.css';
 
-const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
-
-function ReviewTemplate({ albumId, coverImage, albumName, artistName, synopsis, rating }) {
+const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating }) => {
   const [tracks, setTracks] = useState([]);
 
   useEffect(() => {
-    const fetchAccessToken = async () => {
-      try {
-        const response = await axios.post('https://accounts.spotify.com/api/token', 'grant_type=client_credentials', {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': `Basic ${btoa(`${CLIENT_ID}:${CLIENT_SECRET}`)}`
-          }
-        });
-        console.log('Access Token Response:', response.data);
-        return response.data.access_token;
-      } catch (error) {
-        console.error('Error fetching access token', error.response);
-      }
+    const fetchTracks = async () => {
+      const albumTracks = await getAlbumTracks(albumName);
+      setTracks(albumTracks);
     };
-
-    const fetchTracklist = async (accessToken) => {
-      try {
-        const response = await axios.get(`https://api.spotify.com/v1/albums/${albumId}/tracks`, {
-          headers: {
-            'Authorization': `Bearer ${accessToken}`
-          }
-        });
-        console.log('Tracklist Response:', response.data);
-        setTracks(response.data.items);
-      } catch (error) {
-        console.error('Error fetching tracklist', error.response);
-      }
-    };
-
-    const getTracklist = async () => {
-      const accessToken = await fetchAccessToken();
-      if (accessToken) {
-        await fetchTracklist(accessToken);
-      }
-    };
-
-    getTracklist();
-  }, [albumId]);
+    fetchTracks();
+  }, [albumName]);
 
   return (
     <div className="album-review-container">
@@ -80,6 +45,6 @@ function ReviewTemplate({ albumId, coverImage, albumName, artistName, synopsis, 
       </div>
     </div>
   );
-}
+};
 
 export default ReviewTemplate;
