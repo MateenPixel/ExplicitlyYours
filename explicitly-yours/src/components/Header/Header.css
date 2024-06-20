@@ -1,0 +1,31 @@
+.site-header {
+    width: 100%;
+    background-color: #0e0d0d;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .tab {
+    font-size: 1.2em;
+    color: #c1c4e7;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .tab:hover {
+    color: #ffffff;
+  }
+  

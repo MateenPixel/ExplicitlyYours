@@ -1,0 +1,50 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ensure full width */
+    height: calc(100vh - 60px); /* Adjust for header height */
+    z-index: 1;
+    margin-top: 60px; /* Adjust for header height */
+  }
+  
+  .header-title {
+    font-size: 3em;
+    color: #c1c4e7;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+    display: inline-block;
+    animation: header-glitch 1s ease-in-out;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  @keyframes header-glitch {
+    0% { transform: none; }
+    20% { transform: skew(10deg, 0); }
+    40% { transform: skew(-10deg, 0); }
+    60% { transform: skew(10deg, 0); }
+    80% { transform: skew(-10deg, 0); }
+    100% { transform: none; }
+  }
+  
+  .header-title span {
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+  
+  .header-title span:hover {
+    animation: glitch-hover 0.3s ease-in-out;
+  }
+  
+  @keyframes glitch-hover {
+    0%, 100% {
+      text-shadow: 0 0 0 #ff4c4c, 0 0 0 #4c4cff;
+    }
+    50% {
+      text-shadow: 2px 2px 0 #ff4c4c, -2px -2px 0 #4c4cff;
+      transform: translate(1px, -1px);
+    }
+  }
+  

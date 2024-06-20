@@ -1,0 +1,71 @@
+.album-list-container {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background: rgba(15, 15, 15, 0.9);
+  overflow-y: auto;
+  padding: 20px;
+  z-index: 1;
+  color: #e0e0e0;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid #444;
+}
+
+.album-list-header {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid #666;
+  padding-bottom: 10px;
+}
+
+.album-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album-item {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1em;
+  text-align: center;
+  background: linear-gradient(90deg, #e2e4f2, #c1c4e7, #9fa2b3);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.album-item:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.album-list-footer {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #666;
+  padding-top: 10px;
+  background: linear-gradient(90deg, #e2e4f2, #c1c4e7, #9fa2b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
