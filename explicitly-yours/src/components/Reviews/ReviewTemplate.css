@@ -1,0 +1,90 @@
+.album-review-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(15, 15, 15, 0.9); /* Transparent background */
+    color: #e0e0e0;
+    height: calc(90vh - 60px);
+    margin-top: 60px;
+    margin-left: 20px; /* Adjust to avoid overlap */
+    width: calc(100% - 340px); /* Adjust for album list width */
+    overflow-y: auto;
+  }
+  
+  .back-link {
+    color: #c1c4e7;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.2s ease;
+  }
+  
+  .back-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  .album-review-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .album-cover img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .album-details {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .album-details h2 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .album-details p {
+    margin: 5px 0;
+  }
+  
+  .album-synopsis-rating {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .album-synopsis {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .album-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rating-meter {
+    width: 50px;
+    height: 200px;
+    background: #444;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .rating-fill {
+    width: 100%;
+    background: linear-gradient(to top, #4caf50, #81c784);
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    bottom: 0;
+  }
+  

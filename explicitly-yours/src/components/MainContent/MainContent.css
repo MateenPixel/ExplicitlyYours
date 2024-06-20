@@ -4,29 +4,23 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%; /* Ensure full width */
-    height: calc(100vh - 60px); /* Adjust for header height */
+    width: 100%; /* Use full width */
+    height: calc(90vh - 60px); /* Adjust for header height */
     z-index: 1;
     margin-top: 60px; /* Adjust for header height */
+    padding: 0 40px; /* Add padding to prevent cutting off */
+    overflow: visible; /* Ensure text is not cut off */
   }
   
   .header-title {
-    font-size: 3em;
+    font-size: 5em;
     color: #c1c4e7;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     position: relative;
     display: inline-block;
     animation: header-glitch 1s ease-in-out;
     white-space: nowrap; /* Prevent text from wrapping */
-  }
-  
-  @keyframes header-glitch {
-    0% { transform: none; }
-    20% { transform: skew(10deg, 0); }
-    40% { transform: skew(-10deg, 0); }
-    60% { transform: skew(10deg, 0); }
-    80% { transform: skew(-10deg, 0); }
-    100% { transform: none; }
+    transform: translateX(-75px); /* Move the header left */
   }
   
   .header-title span {
@@ -35,7 +29,7 @@
   }
   
   .header-title span:hover {
-    animation: glitch-hover 0.3s ease-in-out;
+    animation: glitch-hover 0.5s ease-in-out;
   }
   
   @keyframes glitch-hover {
