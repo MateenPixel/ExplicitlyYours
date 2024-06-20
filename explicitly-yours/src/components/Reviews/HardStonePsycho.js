@@ -8,7 +8,7 @@ function HardstonePsycho() {
       coverImage="/don.webp" // Replace with actual path to your album cover in the public folder
       albumName="HARDSTONE PSYCHO"
       artistName="Don Toliver"
-      synopsis="This is a synopsis of the album. Here you can write about what the album is about, the themes, the style, and any other relevant information."
+      synopsis="Hardstone Psych by Don Toliver showcases his evolution in the rap scene, balancing creative prowess with stadium-worthy hip-hop tracks. The album shines when Toliver sticks to his core style, featuring collaborations with Kodak Black and Future. While some tracks venture into jarring rock influences, the album's highlights include the emotional Deep In The Water and the confident Attitude. Overall, Hardstone Psycho reinforces Don Toliver's position in rap's elite, blending familiar elements with fresh innovations."
       rating={98}
     />
   );
