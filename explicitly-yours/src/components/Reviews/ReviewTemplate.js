@@ -9,6 +9,7 @@ const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating })
   useEffect(() => {
     const fetchTracks = async () => {
       const albumTracks = await getAlbumTracks(albumName);
+      console.log('Fetched Tracks:', albumTracks); // Log the fetched tracks
       setTracks(albumTracks);
     };
     fetchTracks();

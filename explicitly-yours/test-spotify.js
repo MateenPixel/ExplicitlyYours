@@ -1,11 +1,12 @@
-import axios from 'axios';
+require('dotenv').config();
+const axios = require('axios');
 
 const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
 const getSpotifyAccessToken = async () => {
   const authString = `${CLIENT_ID}:${CLIENT_SECRET}`;
-  const encodedAuthString = btoa(authString);
+  const encodedAuthString = Buffer.from(authString).toString('base64');
 
   try {
     const response = await axios.post(
@@ -15,8 +16,7 @@ const getSpotifyAccessToken = async () => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': `Basic ${encodedAuthString}`
-        },
-        mode: 'cors' // Set CORS mode
+        }
       }
     );
     console.log('Access Token Response:', response.data);
@@ -31,7 +31,7 @@ const getSpotifyAccessToken = async () => {
   }
 };
 
-export const getAlbumTracks = async (albumName) => {
+const getAlbumTracks = async (albumName) => {
   const accessToken = await getSpotifyAccessToken();
   if (!accessToken) return [];
 
@@ -41,8 +41,7 @@ export const getAlbumTracks = async (albumName) => {
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`
-        },
-        mode: 'cors' // Set CORS mode
+        }
       }
     );
     const album = response.data.albums.items[0];
@@ -56,8 +55,7 @@ export const getAlbumTracks = async (albumName) => {
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`
-        },
-        mode: 'cors' // Set CORS mode
+        }
       }
     );
     console.log('Tracklist Response:', tracksResponse.data);
@@ -67,3 +65,7 @@ export const getAlbumTracks = async (albumName) => {
     return [];
   }
 };
+
+getAlbumTracks('Hardstone Psycho').then(tracks => {
+  console.log('Tracks:', tracks);
+});
