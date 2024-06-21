@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ReviewTemplate.css';
 
-const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating, tracks }) => {
+const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating, tracks, spotifyLink }) => {
   return (
     <div className="album-review-container">
       <Link to="/" className="back-link">← Back to Home</Link>
       <div className="album-review-content">
         <div className="album-cover">
           <img src={coverImage} alt={albumName} />
+          <a href={spotifyLink} target="_blank" rel="noopener noreferrer" className="spotify-button">Listen on Spotify</a>
         </div>
         <div className="album-details">
           <h2>{albumName}</h2>
