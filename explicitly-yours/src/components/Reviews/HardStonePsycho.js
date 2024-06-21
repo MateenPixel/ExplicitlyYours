@@ -9,15 +9,21 @@ const HardstonePsycho = () => {
 
   useEffect(() => {
     const fetchTracks = async () => {
-      const albumTracks = await getAlbumTracks('Hardstone Psycho');
-      const tracksWithRatings = albumTracks.map((track, index) => ({
-        ...track,
-        rating: customRatings[index] || 0 // Assign rating or 0 if not found
-      }));
-      setTracks(tracksWithRatings);
+      try {
+        const albumTracks = await getAlbumTracks('Hardstone Psycho');
+        console.log('Fetched tracks:', albumTracks); // Add this line for debugging
+        const tracksWithRatings = albumTracks.map((track, index) => ({
+          ...track,
+          rating: customRatings[index] || 0
+        }));
+        setTracks(tracksWithRatings);
+      } catch (error) {
+        console.error('Error fetching tracks:', error); // Add this line for debugging
+      }
     };
     fetchTracks();
   }, []);
+  
 
   return (
     <ReviewTemplate
