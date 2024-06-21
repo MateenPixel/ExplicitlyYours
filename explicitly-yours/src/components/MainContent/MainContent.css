@@ -1,44 +1,65 @@
 .main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%; /* Use full width */
-    height: calc(90vh - 60px); /* Adjust for header height */
-    z-index: 1;
-    margin-top: 60px; /* Adjust for header height */
-    padding: 0 40px; /* Add padding to prevent cutting off */
-    overflow: visible; /* Ensure text is not cut off */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%; /* Use full width */
+  height: calc(90vh - 60px); /* Adjust for header height */
+  z-index: 1;
+  margin-top: 90px; /* Adjust for header height */
+}
+
+.header-title {
+  font-size: 5em;
+  color: #c1c4e7;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  position: relative;
+  display: inline-block;
+  animation: header-glitch 1s ease-in-out;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.header-title span {
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.header-title span:hover {
+  animation: glitch-hover 0.5s ease-in-out;
+}
+
+@keyframes glitch-hover {
+  0%, 100% {
+    text-shadow: 0 0 0 #ff4c4c, 0 0 0 #4c4cff;
   }
-  
+  50% {
+    text-shadow: 2px 2px 0 #ff4c4c, -2px -2px 0 #4c4cff;
+    transform: translate(1px, -1px);
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 40px; /* Adjust for smaller screens */
+    padding: 0 20px; /* Adjust padding */
+  }
+
   .header-title {
-    font-size: 5em;
-    color: #c1c4e7;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    position: relative;
-    display: inline-block;
-    animation: header-glitch 1s ease-in-out;
-    white-space: nowrap; /* Prevent text from wrapping */
-    transform: translateX(-75px); /* Move the header left */
+    font-size: 3em; /* Reduce font size for smaller screens */
+    transform: translateX(0); /* Center the header */
+    align-items: center;
   }
-  
-  .header-title span {
-    display: inline-block;
-    transition: all 0.2s ease;
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin-top: 20px; /* Further adjust for smaller screens */
+    padding: 0 10px; /* Adjust padding */
   }
-  
-  .header-title span:hover {
-    animation: glitch-hover 0.5s ease-in-out;
+
+  .header-title {
+    font-size: 2em; /* Further reduce font size for smallest screens */
   }
-  
-  @keyframes glitch-hover {
-    0%, 100% {
-      text-shadow: 0 0 0 #ff4c4c, 0 0 0 #4c4cff;
-    }
-    50% {
-      text-shadow: 2px 2px 0 #ff4c4c, -2px -2px 0 #4c4cff;
-      transform: translate(1px, -1px);
-    }
-  }
-  
+}

@@ -156,3 +156,131 @@
 .rating-text {
   font-size: 0.8em;
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .album-review-container {
+    height: auto;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+  }
+
+  .album-review-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album-cover img {
+    width: 100%;
+    max-width: 200px;
+    margin-left: 95px;
+  }
+
+  .album-details {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .album-details h2 {
+    font-size: 1.5em;
+  }
+
+  .artist-name {
+    font-size: 1em;
+  }
+
+  .album-synopsis {
+    font-size: 0.9em;
+  }
+
+  .rating-meter {
+    width: 150px;
+    height: 15px;
+    margin-left: 95px;
+  }
+
+  .rating-text {
+    font-size: 0.9em;
+  }
+
+  .tracklist {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .tracklist li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track-rating {
+    margin-top: 10px;
+  }
+
+  .track-rating .rating-meter {
+    width: 80px;
+    height: 8px;
+  }
+
+  .track-rating .rating-text {
+    font-size: 0.7em;
+  }
+
+  .spotify-button {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 117px;
+    padding: 10px 20px;
+    background-color: #1DB954; /* Spotify green */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .spotify-button:hover {
+    background-color: #1ed760; /* Lighter Spotify green */
+  }
+
+}
+
+@media (max-width: 480px) {
+  .album-details h2 {
+    font-size: 1.2em;
+  }
+
+  .artist-name {
+    font-size: 0.9em;
+  }
+
+  .album-synopsis {
+    font-size: 0.8em;
+  }
+
+  .rating-meter {
+    width: 120px;
+    height: 12px;
+  }
+
+  .rating-text {
+    font-size: 0.8em;
+  }
+
+  .tracklist li {
+    padding: 5px;
+  }
+
+  .track-rating .rating-meter {
+    width: 60px;
+    height: 6px;
+  }
+
+  .track-rating .rating-text {
+    font-size: 0.6em;
+  }
+}

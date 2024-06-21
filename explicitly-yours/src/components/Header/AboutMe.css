@@ -19,7 +19,7 @@
 }
 
 .resume-subtitle {
-  font-size: 1.8em;
+  font-size: 1.3em;
   margin-bottom: 20px;
   text-align: center;
   color: #c1c4e7;
@@ -62,4 +62,46 @@
 .back-link:hover {
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 10px; /* Reduce padding */
+    margin: 20px 10px; /* Adjust margins */
+    width: calc(100% - 40px); /* Adjust width */
+    margin-top: 50px;
+  }
+
+  .resume-title {
+    font-size: 2em; /* Reduce font size */
+    margin-bottom: 5px; /* Adjust margin */
+  }
+
+  .resume-subtitle {
+    font-size: 1.5em; /* Reduce font size */
+    margin-bottom: 10px; /* Adjust margin */
+  }
+
+  .resume-section-title {
+    font-size: 1.2em; /* Reduce font size */
+    margin-bottom: 5px; /* Adjust margin */
+  }
+
+  .resume-text, .resume-list {
+    font-size: 1em; /* Reduce font size */
+    margin-left: 10px; /* Adjust margin */
+  }
+
+  .resume-list {
+    padding-left: 10px; /* Adjust padding */
+  }
+
+  .resume-list li {
+    margin-bottom: 5px; /* Adjust margin */
+  }
+
+  .back-link {
+    font-size: 1em; /* Reduce font size */
+    margin-top: 10px; /* Adjust margin */
+  }
 }
