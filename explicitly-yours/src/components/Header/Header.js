@@ -8,7 +8,7 @@ function Header() {
       <nav className="tabs">
         <Link to="/about-me" className="tab">About Me</Link>
         <Link to="/reviews" className="tab">Reviews</Link>
-        <Link to="/recents" className="tab">Recents</Link>
+        <Link to="/favorites" className="tab">Favorites</Link>
       </nav>
     </header>
   );

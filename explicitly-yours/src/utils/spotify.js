@@ -58,6 +58,39 @@ export const getAlbumTracks = async (albumName) => {
   }
 };
 
+export const getTrackDetails = async (trackName) => {
+  const accessToken = await getSpotifyAccessToken();
+  if (!accessToken) return null;
+
+  try {
+    const response = await axios.get(
+      `https://api.spotify.com/v1/search?q=track:${encodeURIComponent(trackName)}&type=track&limit=1`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        },
+        mode: 'cors'
+      }
+    );
+    const track = response.data.tracks.items[0];
+    console.log('Track Search Response:', response.data);
+    if (!track) {
+      console.error('Track not found');
+      return null;
+    }
+
+    return {
+      name: track.name,
+      artist: track.artists.map(artist => artist.name).join(', '),
+      cover: track.album.images[0]?.url || '',
+      spotifyLink: track.external_urls.spotify || ''
+    };
+  } catch (error) {
+    console.error('Error fetching track details:', error.response ? error.response.data : error.message);
+    return null;
+  }
+};
+
 export const getAlbumDetails = async (albumName) => {
   const accessToken = await getSpotifyAccessToken();
   if (!accessToken) return null;
@@ -87,4 +120,7 @@ export const getAlbumDetails = async (albumName) => {
     console.error('Error fetching album details:', error.response ? error.response.data : error.message);
     return null;
   }
+
+
+
 };

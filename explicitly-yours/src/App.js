@@ -8,7 +8,7 @@ import AnimatedBackground from './components/AnimatedBackground/AnimatedBackgrou
 import HardstonePsycho from './components/Reviews/HardStonePsycho';
 import AboutMe from './components/Header/AboutMe';
 import Reviews from './components/Header/Reviews';
-import Recents from './components/Header/Recents';
+import Favorites from './components/Header/Favorites';
 import Graduation from './components/Reviews/Graduation';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           <Route path="/review/Graduation" element={<Graduation />} />
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/reviews" element={<Reviews />} />
-          <Route path="/recents" element={<Recents />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
         <AlbumList />
       </div>
