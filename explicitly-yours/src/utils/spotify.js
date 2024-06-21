@@ -1,33 +1,23 @@
 import axios from 'axios';
 
-const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
 const getSpotifyAccessToken = async () => {
-  const authString = `${CLIENT_ID}:${CLIENT_SECRET}`;
-  const encodedAuthString = btoa(authString);
-
   try {
-    const response = await axios.post(
-      'https://accounts.spotify.com/api/token',
-      'grant_type=client_credentials',
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': `Basic ${encodedAuthString}`
-        },
-        mode: 'cors' // Set CORS mode
+    const response = await axios.post('https://accounts.spotify.com/api/token', 
+      new URLSearchParams({
+        'grant_type': 'client_credentials'
+      }), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
       }
-    );
-    console.log('Access Token Response:', response.data);
+    });
     return response.data.access_token;
   } catch (error) {
-    console.error('Error fetching access token:', error.response ? error.response.data : error.message);
-    console.error('Request Headers:', {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': `Basic ${encodedAuthString}`
-    });
-    return null;
+    console.error('Error fetching access token:', error);
+    throw error;
   }
 };
 
