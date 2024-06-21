@@ -57,3 +57,34 @@ export const getAlbumTracks = async (albumName) => {
     return [];
   }
 };
+
+export const getAlbumDetails = async (albumName) => {
+  const accessToken = await getSpotifyAccessToken();
+  if (!accessToken) return null;
+
+  try {
+    const response = await axios.get(
+      `https://api.spotify.com/v1/search?q=album:${encodeURIComponent(albumName)}&type=album&limit=1`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        },
+        mode: 'cors' // Set CORS mode
+      }
+    );
+    const album = response.data.albums.items[0];
+    console.log('Album Details Response:', response.data);
+    if (!album) {
+      console.error('Album not found');
+      return null;
+    }
+
+    return {
+      coverImage: album.images[0]?.url || '',
+      spotifyLink: album.external_urls.spotify || ''
+    };
+  } catch (error) {
+    console.error('Error fetching album details:', error.response ? error.response.data : error.message);
+    return null;
+  }
+};
