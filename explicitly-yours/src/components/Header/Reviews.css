@@ -1,0 +1,75 @@
+.review-list-container {
+    padding: 20px;
+    background: rgba(15, 15, 15, 0.95);
+    color: #e0e0e0;
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .review-list-header {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+  }
+  
+  .review-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .review-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: calc(50% - 40px); /* Two items per row */
+  }
+  
+  .review-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .review-cover:hover {
+    transform: scale(1.05);
+  }
+  
+  .review-name {
+    margin-top: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #c1c4e7;
+    transition: color 0.3s ease;
+  }
+  
+  .review-item a {
+    text-decoration: none;
+  }
+  
+  .review-item a:hover .review-name {
+    color: #ffffff;
+  }
+  
+
+  .back-link {
+    color: #c1c4e7;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.2s ease;
+    align-self: center;
+  }
+  
+  .back-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }

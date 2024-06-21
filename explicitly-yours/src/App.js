@@ -6,6 +6,10 @@ import MainContent from './components/MainContent/MainContent';
 import AlbumList from './components/AlbumList/AlbumList';
 import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground';
 import HardstonePsycho from './components/Reviews/HardStonePsycho';
+import AboutMe from './components/Header/AboutMe';
+import Reviews from './components/Header/Reviews';
+import Recents from './components/Header/Recents';
+import Graduation from './components/Reviews/Graduation';
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/review/hardstone-psycho" element={<HardstonePsycho />} />
+          <Route path="/review/Graduation" element={<Graduation />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/recents" element={<Recents />} />
         </Routes>
         <AlbumList />
       </div>

@@ -6,9 +6,9 @@ function Header() {
   return (
     <header className="site-header">
       <nav className="tabs">
-        <Link to="#about" className="tab">About Me</Link>
-        <Link to="#reviews" className="tab">Reviews</Link>
-        <Link to="#recently-listened" className="tab">Recently Listened</Link>
+        <Link to="/about-me" className="tab">About Me</Link>
+        <Link to="/reviews" className="tab">Reviews</Link>
+        <Link to="/recents" className="tab">Recents</Link>
       </nav>
     </header>
   );

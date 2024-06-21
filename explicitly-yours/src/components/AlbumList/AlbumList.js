@@ -3,7 +3,7 @@ import './AlbumList.css';
 import { useLocation } from 'react-router-dom';
 
 const albums = [
-  { name: 'Graduation by Kanye West', path: '/review/graduation' },
+  { name: 'Graduation by Kanye West', path: '/review/Graduation' },
   { name: 'HARDSTONE PSYCHO by Don Toliver', path: '/review/hardstone-psycho' },
   'Link 3',
   'Link 4',

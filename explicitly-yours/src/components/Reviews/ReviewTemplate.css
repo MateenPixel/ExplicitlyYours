@@ -7,7 +7,7 @@
   height: calc(90vh - 60px);
   margin-top: 60px;
   margin-left: 20px;
-  width: calc(100% - 40px);
+  margin-right: 20px;
   overflow-y: auto;
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
