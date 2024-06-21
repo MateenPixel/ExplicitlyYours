@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background: rgba(15, 15, 15, 0.9); /* Transparent background */
+  background: rgba(15, 15, 15, 0.95); /* Slightly more opaque */
   color: #e0e0e0;
   height: calc(90vh - 60px);
   margin-top: 60px;
-  margin-left: 20px; /* Adjust to avoid overlap */
-  width: calc(100% - 340px); /* Adjust for album list width */
+  margin-left: 20px;
+  width: calc(100% - 40px);
   overflow-y: auto;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
 .back-link {
@@ -26,16 +28,16 @@
 
 .album-review-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 20px;
 }
 
 .album-cover img {
-  width: 50%;
-  max-width: 300px;
+  width: 300px;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Image shadow */
 }
 
 .album-details {
@@ -49,58 +51,91 @@
   margin: 0;
 }
 
-.album-details p {
-  margin: 5px 0;
-}
-
-.album-synopsis-rating {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 20px;
+.artist-name {
+  font-size: 1.2em;
+  color: #c1c4e7;
+  margin-top: 5px;
 }
 
 .album-synopsis {
-  flex: 1;
-  margin-right: 20px;
+  margin-top: 10px;
+  line-height: 1.6; /* Improve readability */
 }
 
 .album-rating {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 }
 
 .rating-meter {
-  width: 50px;
-  height: 200px;
-  background: #444;
-  border-radius: 5px;
+  width: 200px;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  margin-right: 10px;
   position: relative;
-  margin-bottom: 10px;
 }
 
 .rating-fill {
-  width: 100%;
-  background: linear-gradient(to top, #4caf50, #81c784);
-  border-radius: 5px 5px 0 0;
-  position: absolute;
-  bottom: 0;
+  height: 100%;
+  background: #4caf50;
+  border-radius: 10px;
+}
+
+.rating-text {
+  font-size: 1em;
+  color: #e0e0e0;
 }
 
 .tracklist {
   margin-top: 20px;
+  padding-left: 20px; /* Added padding for equal spacing */
+  padding-right: 20px; /* Added padding for equal spacing */
 }
 
 .tracklist h3 {
   margin-bottom: 10px;
+  border-bottom: 2px solid #4caf50; /* Underline for header */
+  padding-bottom: 5px;
 }
 
 .tracklist ul {
   list-style-type: none;
   padding: 0;
+  margin: 0; /* Remove default margin */
 }
 
 .tracklist li {
   margin: 5px 0;
+  padding: 10px; /* Added padding for better spacing */
+  background: rgba(68, 68, 68, 0.8); /* Slightly lighter background */
+  border-radius: 5px;
+  transition: background 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tracklist li:hover {
+  background: rgba(68, 68, 68, 1);
+}
+
+.track-rating {
+  display: flex;
+  align-items: center;
+}
+
+.track-rating .rating-meter {
+  width: 100px;
+  height: 10px;
+  margin-left: 10px; /* Adjusted margin to bring closer to track name */
+}
+
+.track-rating .rating-fill {
+  height: 100%;
+}
+
+.rating-text {
+  font-size: 0.8em;
 }

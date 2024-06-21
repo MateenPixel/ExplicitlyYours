@@ -10,16 +10,14 @@ import HardstonePsycho from './components/Reviews/HardStonePsycho';
 function App() {
   return (
     <Router>
-      <div className="app-container">
-        <AnimatedBackground />
+      <div className="App">
         <Header />
+        <AnimatedBackground />
         <Routes>
           <Route path="/" element={<MainContent />} />
-          <Route path="/albums" element={<MainContent />} />
           <Route path="/review/hardstone-psycho" element={<HardstonePsycho />} />
-          {/* Add other routes for different reviews here */}
         </Routes>
-        <AlbumList /> {/* Ensure AlbumList is always visible */}
+        <AlbumList />
       </div>
     </Router>
   );
