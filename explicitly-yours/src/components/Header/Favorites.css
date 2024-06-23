@@ -1,28 +1,40 @@
-.page-container {
+.favorites-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 60px 20px;
   padding: 20px;
-  background: rgba(15, 15, 15, 0.95);
+  background: linear-gradient(135deg, #1f1f1f, #121212);
   color: #e0e0e0;
-  margin-top: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial', sans-serif;
+}
+
+.personal-favorites, .highest-rated {
+  width: 48%;
+  background: rgba(34, 34, 34, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+  color: #1DB954; /* Spotify green */
+  margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
 .favorite-tracks-list {
   list-style: none;
   padding: 0;
-  width: 100%;
-  max-width: 800px; /* Adjust this as needed */
 }
 
 .favorite-track-item {
   display: flex;
   align-items: center;
-  background: rgba(34, 34, 34, 0.9);
+  background: rgba(45, 45, 45, 0.9);
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -58,6 +70,11 @@
   font-size: 1.2em;
   color: #a0a3c0;
   margin: 5px 0;
+}
+
+.track-rating {
+  font-size: 1em;
+  color: #c1c4e7;
 }
 
 .track-buttons {

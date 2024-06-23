@@ -21,24 +21,24 @@ const getSpotifyAccessToken = async () => {
   }
 };
 
-export const getAlbumTracks = async (albumName) => {
+export const getAlbumTracks = async (albumName, artistName) => {
   const accessToken = await getSpotifyAccessToken();
   if (!accessToken) return [];
 
   try {
     const response = await axios.get(
-      `https://api.spotify.com/v1/search?q=album:${encodeURIComponent(albumName)}&type=album&limit=1`,
+      `https://api.spotify.com/v1/search?q=album:${encodeURIComponent(albumName)}%20artist:${encodeURIComponent(artistName)}&type=album&limit=1`,
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         },
-        mode: 'cors' // Set CORS mode
+        mode: 'cors'
       }
     );
     const album = response.data.albums.items[0];
     console.log('Album Search Response:', response.data);
-    if (!album) {
-      console.error('Album not found');
+    if (!album || !album.artists.some(artist => artist.name.toLowerCase() === artistName.toLowerCase())) {
+      console.error('Album not found or artist does not match');
       return [];
     }
     const tracksResponse = await axios.get(
@@ -47,7 +47,7 @@ export const getAlbumTracks = async (albumName) => {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         },
-        mode: 'cors' // Set CORS mode
+        mode: 'cors'
       }
     );
     console.log('Tracklist Response:', tracksResponse.data);
@@ -58,13 +58,44 @@ export const getAlbumTracks = async (albumName) => {
   }
 };
 
-export const getTrackDetails = async (trackName) => {
+export const getAlbumDetails = async (albumName, artistName) => {
   const accessToken = await getSpotifyAccessToken();
   if (!accessToken) return null;
 
   try {
     const response = await axios.get(
-      `https://api.spotify.com/v1/search?q=track:${encodeURIComponent(trackName)}&type=track&limit=1`,
+      `https://api.spotify.com/v1/search?q=album:${encodeURIComponent(albumName)}%20artist:${encodeURIComponent(artistName)}&type=album&limit=1`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        },
+        mode: 'cors'
+      }
+    );
+    const album = response.data.albums.items[0];
+    console.log('Album Details Response:', response.data);
+    if (!album || !album.artists.some(artist => artist.name.toLowerCase() === artistName.toLowerCase())) {
+      console.error('Album not found or artist does not match');
+      return null;
+    }
+
+    return {
+      coverImage: album.images[0]?.url || '',
+      spotifyLink: album.external_urls.spotify || ''
+    };
+  } catch (error) {
+    console.error('Error fetching album details:', error.response ? error.response.data : error.message);
+    return null;
+  }
+};
+
+export const getTrackDetails = async (trackName, artistName) => {
+  const accessToken = await getSpotifyAccessToken();
+  if (!accessToken) return null;
+
+  try {
+    const response = await axios.get(
+      `https://api.spotify.com/v1/search?q=track:${encodeURIComponent(trackName)}%20artist:${encodeURIComponent(artistName)}&type=track&limit=1`,
       {
         headers: {
           'Authorization': `Bearer ${accessToken}`
@@ -74,8 +105,8 @@ export const getTrackDetails = async (trackName) => {
     );
     const track = response.data.tracks.items[0];
     console.log('Track Search Response:', response.data);
-    if (!track) {
-      console.error('Track not found');
+    if (!track || !track.artists.some(artist => artist.name.toLowerCase() === artistName.toLowerCase())) {
+      console.error('Track not found or artist does not match');
       return null;
     }
 
@@ -91,36 +122,3 @@ export const getTrackDetails = async (trackName) => {
   }
 };
 
-export const getAlbumDetails = async (albumName) => {
-  const accessToken = await getSpotifyAccessToken();
-  if (!accessToken) return null;
-
-  try {
-    const response = await axios.get(
-      `https://api.spotify.com/v1/search?q=album:${encodeURIComponent(albumName)}&type=album&limit=1`,
-      {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
-        },
-        mode: 'cors' // Set CORS mode
-      }
-    );
-    const album = response.data.albums.items[0];
-    console.log('Album Details Response:', response.data);
-    if (!album) {
-      console.error('Album not found');
-      return null;
-    }
-
-    return {
-      coverImage: album.images[0]?.url || '',
-      spotifyLink: album.external_urls.spotify || ''
-    };
-  } catch (error) {
-    console.error('Error fetching album details:', error.response ? error.response.data : error.message);
-    return null;
-  }
-
-
-
-};

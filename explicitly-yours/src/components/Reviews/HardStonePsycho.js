@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReviewTemplate from './ReviewTemplate';
-import { getAlbumTracks, getAlbumDetails } from '../../utils/spotify'; // Ensure you have these functions implemented
+import { getAlbumTracks, getAlbumDetails } from '../../utils/spotify';
 
 const HardstonePsycho = () => {
   const [tracks, setTracks] = useState([]);
@@ -17,14 +17,14 @@ const HardstonePsycho = () => {
   useEffect(() => {
     const fetchAlbumData = async () => {
       try {
-        const albumTracks = await getAlbumTracks('Hardstone Psycho');
+        const albumTracks = await getAlbumTracks('Hardstone Psycho', 'Don Toliver');
         const tracksWithRatings = albumTracks.map((track, index) => ({
           ...track,
           rating: customRatings[index] || 0,
         }));
         setTracks(tracksWithRatings);
 
-        const albumDetails = await getAlbumDetails('Hardstone Psycho');
+        const albumDetails = await getAlbumDetails('Hardstone Psycho', 'Don Toliver');
         if (albumDetails) {
           setAlbumDetails(albumDetails);
         }
