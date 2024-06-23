@@ -30,7 +30,7 @@
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    width: calc(50% - 40px); /* Two items per row */
+    width: calc(50% - 450px); /* Two items per row */
   }
   
   .review-cover {

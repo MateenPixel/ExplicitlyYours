@@ -6,7 +6,7 @@ const albums = [
   { name: 'Graduation by Kanye West', path: '/review/Graduation' },
   { name: 'HARDSTONE PSYCHO by Don Toliver', path: '/review/hardstone-psycho' },
   { name: 'IGOR by Tyler the Creator', path: '/review/IGOR' },
-  'Link 4',
+  { name: 'TWOPOINTFIVE by Aminé', path: '/review/TwoPointFive' },
   'Link 5',
   'Link 6',
   'Link 7',
