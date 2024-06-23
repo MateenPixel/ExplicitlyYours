@@ -1,17 +1,19 @@
 .site-header {
   width: 100%;
-  background-color: #0e0d0d;
+  background: linear-gradient(135deg, #1e1e1e, #0d0d0d);
   z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
 }
 
 .tabs {
   display: flex;
-  justify-content: space-evenly; /* Ensures even spacing between tabs */
+  justify-content: space-evenly;
   padding: 10px 0;
   width: 100%;
   max-width: 1200px;
@@ -22,11 +24,21 @@
   color: #c1c4e7;
   text-decoration: none;
   padding: 10px 20px;
-  transition: color 0.3s ease;
-  flex-grow: 1; /* Ensures tabs take equal width */
-  text-align: center; /* Centers the text within each tab */
+  transition: all 0.3s ease;
+  flex-grow: 1;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .tab:hover {
   color: #ffffff;
+  background-color: #333333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  color: #ffffff;
+  background-color: #1DB954;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }

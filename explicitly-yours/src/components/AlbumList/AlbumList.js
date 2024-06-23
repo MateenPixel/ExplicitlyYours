@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 const albums = [
   { name: 'Graduation by Kanye West', path: '/review/Graduation' },
   { name: 'HARDSTONE PSYCHO by Don Toliver', path: '/review/hardstone-psycho' },
-  'Link 3',
+  { name: 'IGOR by Tyler the Creator', path: '/review/IGOR' },
   'Link 4',
   'Link 5',
   'Link 6',

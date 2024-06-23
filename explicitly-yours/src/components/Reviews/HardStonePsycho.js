@@ -7,6 +7,24 @@ const HardstonePsycho = () => {
   const [albumDetails, setAlbumDetails] = useState({ coverImage: '', spotifyLink: '' });
 
   const customRatings = [79, 77, 54, 74, 75, 65, 62, 69, 72, 58, 73, 59, 62, 68, 68, 56]; 
+  const customThoughts = [
+    "Powerful opening track with an energetic vibe.",
+    "Strong hook and memorable lyrics.",
+    "Interesting collaboration but not a standout.",
+    "Great energy and flow.",
+    "Catchy and upbeat.",
+    "Solid track with good replay value.",
+    "Good production but lacks lyrical depth.",
+    "Great beat and solid performance.",
+    "Melodic and well-produced.",
+    "Not very memorable, feels like filler.",
+    "Strong closing track with lasting impact.",
+    "Catchy but not very deep.",
+    "Good collaboration with strong features.",
+    "Unique beat switch that keeps it interesting.",
+    "Solid track with good replay value.",
+    "Decent closer but could be stronger."
+  ];
 
   var total = 0;
   for (var i = 0; i < customRatings.length; i++) {
@@ -18,11 +36,12 @@ const HardstonePsycho = () => {
     const fetchAlbumData = async () => {
       try {
         const albumTracks = await getAlbumTracks('Hardstone Psycho', 'Don Toliver');
-        const tracksWithRatings = albumTracks.map((track, index) => ({
+        const tracksWithRatingsAndThoughts = albumTracks.map((track, index) => ({
           ...track,
           rating: customRatings[index] || 0,
+          thoughts: customThoughts[index] || ""
         }));
-        setTracks(tracksWithRatings);
+        setTracks(tracksWithRatingsAndThoughts);
 
         const albumDetails = await getAlbumDetails('Hardstone Psycho', 'Don Toliver');
         if (albumDetails) {

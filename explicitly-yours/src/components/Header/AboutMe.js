@@ -48,7 +48,7 @@ const AboutMe = () => {
         <p className="resume-text">
           B.A. in Computer Science (2021 - 2025)
         <p className='resume-text'></p>
-          PhD in Jugding Others Music Preferences (Accelerated) (2016-2021)
+          PhD in Judging Others' Music Preferences (Accelerated) (2016-2021)
         <p className='resume-text'></p>
           B.A. in Making Terrible Beats through GarageBand (2012 - 2016)
         </p>
@@ -56,12 +56,12 @@ const AboutMe = () => {
       <div className="resume-section">
         <h3 className="resume-section-title">Hobbies</h3>
         <p className="resume-text">
-          - Driving fast, music loud in old folks neighborhoods.
+          - Driving fast, music loud in old folks' neighborhoods.
           <br />- Convincing people that questionable music is good music
           <br />- Separating art from the artist!
         </p>
       </div>
-      <Link to="/" className="back-link">← Back to Home</Link>
+      <Link to="/" className="button-link">← Back to Home</Link>
     </div>
   );
 };

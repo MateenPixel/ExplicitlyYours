@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getTrackDetails } from '../../utils/spotify';
+import { Link } from 'react-router-dom';
 import './Favorites.css';
 
 const personalFavoriteTracks = [
@@ -49,49 +50,51 @@ const Favorites = () => {
 
   return (
     <div className="favorites-section">
-      <div className="personal-favorites">
-        <h2>Current Favorites</h2>
-        {personalFavorites.length === 0 ? (
-          <p>Loading personal favorites...</p>
-        ) : (
-          <ul className="favorite-tracks-list">
-            {personalFavorites.map((detail, index) => (
-              <li key={index} className="favorite-track-item">
-                <img src={detail.cover} alt={detail.name} className="track-cover" />
-                <div className="track-info">
-                  <p className="track-name">{detail.name}</p>
-                  <p className="track-artist">{detail.artist}</p>
-                  <div className="track-buttons">
-                    <a href={detail.spotifyLink} target="_blank" rel="noopener noreferrer">Open in Spotify</a>
+      <div className="favorites-content">
+        <div className="personal-favorites">
+          <h2>Current Favorites</h2>
+          {personalFavorites.length === 0 ? (
+            <p>Loading personal favorites...</p>
+          ) : (
+            <ul className="favorite-tracks-list">
+              {personalFavorites.map((detail, index) => (
+                <li key={index} className="favorite-track-item">
+                  <img src={detail.cover} alt={detail.name} className="track-cover" />
+                  <div className="track-info">
+                    <p className="track-name">{detail.name}</p>
+                    <p className="track-artist">{detail.artist}</p>
+                    <div className="track-buttons">
+                      <a href={detail.spotifyLink} target="_blank" rel="noopener noreferrer">Open in Spotify</a>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div className="highest-rated">
-        <h2>All Time Favorites</h2>
-        {highestRated.length === 0 ? (
-          <p>Loading highest rated tracks...</p>
-        ) : (
-          <ul className="favorite-tracks-list">
-            {highestRated.map((detail, index) => (
-              <li key={index} className="favorite-track-item">
-                <img src={detail.cover} alt={detail.name} className="track-cover" />
-                <div className="track-info">
-                  <p className="track-name">{detail.name}</p>
-                  <p className="track-artist">{detail.artist}</p>
-
-                  <div className="track-buttons">
-                    <a href={detail.spotifyLink} target="_blank" rel="noopener noreferrer">Open in Spotify</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className="highest-rated">
+          <h2>All Time Favorites</h2>
+          {highestRated.length === 0 ? (
+            <p>Loading highest rated tracks...</p>
+          ) : (
+            <ul className="favorite-tracks-list">
+              {highestRated.map((detail, index) => (
+                <li key={index} className="favorite-track-item">
+                  <img src={detail.cover} alt={detail.name} className="track-cover" />
+                  <div className="track-info">
+                    <p className="track-name">{detail.name}</p>
+                    <p className="track-artist">{detail.artist}</p>
+                    <div className="track-buttons">
+                      <a href={detail.spotifyLink} target="_blank" rel="noopener noreferrer">Open in Spotify</a>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
+      <Link to="/" className="button-link">← Back to Home</Link>
     </div>
   );
 };

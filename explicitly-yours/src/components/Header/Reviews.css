@@ -1,3 +1,5 @@
+@import './common.css';
+
 .review-list-container {
     padding: 20px;
     background: rgba(15, 15, 15, 0.95);
@@ -73,3 +75,5 @@
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
+
+  

@@ -5,7 +5,7 @@
   background: rgba(15, 15, 15, 0.95); /* Slightly more opaque */
   color: #e0e0e0;
   height: calc(90vh - 60px);
-  margin-top: 60px;
+  margin-top: 85px;
   margin-left: 20px;
   margin-right: 20px;
   overflow-y: auto;
@@ -15,7 +15,7 @@
 
 .back-link {
   color: #c1c4e7;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   text-decoration: none;
   font-size: 1.2em;
   transition: color 0.2s ease;
@@ -38,6 +38,7 @@
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Image shadow */
+  margin-top: 75px;
 }
 
 .spotify-button {
@@ -62,22 +63,26 @@
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center align the content */
+  padding: 20px;
 }
 
 .album-details h2 {
   font-size: 2em;
-  margin: 0;
+  margin: 0; /* Remove margin to clean up the look */
+  color: #c1c4e7; /* Change color to a more neutral shade */
 }
 
 .artist-name {
   font-size: 1.2em;
-  color: #c1c4e7;
+  color: #1DB954; /* Spotify green for artist name */
   margin-top: 5px;
 }
 
 .album-synopsis {
   margin-top: 5px;
   line-height: 1.6; /* Improve readability */
+  text-align: center; /* Center align the synopsis */
 }
 
 .album-rating {
@@ -92,6 +97,7 @@
   border-radius: 10px;
   margin-right: 10px;
   position: relative;
+  margin-top: 40px;
 }
 
 .rating-fill {
@@ -103,117 +109,121 @@
 .rating-text {
   font-size: 1em;
   color: #e0e0e0;
+  margin-top: 50px;
 }
 
+/* Tracklist Container */
 .tracklist {
   margin-top: 20px;
-  padding-left: 20px; /* Added padding for equal spacing */
-  padding-right: 20px; /* Added padding for equal spacing */
+  padding: 20px;
+  background: #1e1e1e; /* Dark background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .tracklist h3 {
-  margin-bottom: 10px;
-  border-bottom: 2px solid #4caf50; /* Underline for header */
-  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  text-align: center;
+  color: #1DB954; /* Spotify green for header */
 }
 
 .tracklist ul {
   list-style-type: none;
   padding: 0;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
+/* Tracklist Item */
 .tracklist li {
-  margin: 5px 0;
-  padding: 10px; /* Added padding for better spacing */
-  background: rgba(68, 68, 68, 0.8); /* Slightly lighter background */
-  border-radius: 5px;
-  transition: background 0.2s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 10px 0;
+  padding: 15px;
+  background: #292929; /* Dark background for track items */
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .tracklist li:hover {
-  background: rgba(68, 68, 68, 1);
+  background: #333; /* Slightly lighter on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* Track Information */
+.track-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.track-name {
+  font-size: 1.2em;
+  color: #e0e0e0; /* Light color for track name */
+  margin-right: 20px;
+  text-align: center; /* Center align the text */
+  flex: 1; /* Allow flexbox to manage space */
 }
 
 .track-rating {
   display: flex;
   align-items: center;
+  margin-left: 20px; /* Adjust spacing as needed */
 }
 
 .track-rating .rating-meter {
   width: 100px;
   height: 10px;
-  margin-left: 10px; /* Adjusted margin to bring closer to track name */
+  background: #555; /* Slightly lighter background */
+  border-radius: 5px;
+  position: relative;
 }
 
 .track-rating .rating-fill {
   height: 100%;
+  background: #1DB954; /* Spotify green */
+  border-radius: 5px;
 }
 
-.rating-text {
-  font-size: 0.8em;
+.track-rating .rating-text {
+  font-size: 0.9em;
+  color: #e0e0e0;
+  margin-left: 10px;
+}
+
+/* Text Box for Description */
+.track-description {
+  margin-left: 20px;
+  flex: 2;
+  background: #222; /* Slightly lighter background for text box */
+  border: 1px solid #1DB954; /* Spotify green border */
+  border-radius: 5px;
+  padding: 10px;
+  color: #e0e0e0;
+  height: 50px; /* Fixed height for text box */
+  overflow-y: auto; /* Scrollable if content overflows */
+  white-space: pre-wrap; /* Preserve whitespace and wrapping */
 }
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-  .album-review-container {
-    height: auto;
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
+  .tracklist {
+    padding: 15px;
   }
 
-  .album-review-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .album-cover img {
-    width: 100%;
-    max-width: 200px;
-    margin-left: 95px;
-  }
-
-  .album-details {
-    margin-left: 0;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .album-details h2 {
+  .tracklist h3 {
     font-size: 1.5em;
   }
 
-  .artist-name {
-    font-size: 1em;
-  }
-
-  .album-synopsis {
-    font-size: 0.9em;
-  }
-
-  .rating-meter {
-    width: 150px;
-    height: 15px;
-    margin-left: 95px;
-  }
-
-  .rating-text {
-    font-size: 0.9em;
-  }
-
-  .tracklist {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .tracklist li {
+  .track-info {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .track-name {
+    font-size: 1.1em;
   }
 
   .track-rating {
@@ -221,66 +231,33 @@
   }
 
   .track-rating .rating-meter {
-    width: 80px;
+    width: 100%;
     height: 8px;
   }
 
-  .track-rating .rating-text {
-    font-size: 0.7em;
+  .track-description {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
   }
-
-  .spotify-button {
-    display: inline-block;
-    margin-top: 40px;
-    margin-left: 117px;
-    padding: 10px 20px;
-    background-color: #1DB954; /* Spotify green */
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .spotify-button:hover {
-    background-color: #1ed760; /* Lighter Spotify green */
-  }
-
 }
 
 @media (max-width: 480px) {
-  .album-details h2 {
+  .tracklist h3 {
     font-size: 1.2em;
   }
 
-  .artist-name {
-    font-size: 0.9em;
-  }
-
-  .album-synopsis {
-    font-size: 0.8em;
-  }
-
-  .rating-meter {
-    width: 120px;
-    height: 12px;
-  }
-
-  .rating-text {
-    font-size: 0.8em;
-  }
-
-  .tracklist li {
-    padding: 5px;
+  .track-name {
+    font-size: 1em;
   }
 
   .track-rating .rating-meter {
-    width: 60px;
-    height: 6px;
+    height: 8px;
   }
 
-  .track-rating .rating-text {
-    font-size: 0.6em;
+  .track-description {
+    font-size: 0.8em;
+    padding: 8px;
   }
 }

@@ -5,6 +5,8 @@ import './Reviews.css';
 const reviews = [
   { name: 'Graduation by Kanye West', path: '/review/graduation', cover: 'ye.jpeg' },
   { name: 'HARDSTONE PSYCHO by Don Toliver', path: '/review/hardstone-psycho', cover: 'don.webp' },
+  { name: 'IGOR by Tyler the Creator', path: '/review/igor', cover: 'igor.jpeg' },
+  { name: 'TWOPOINTFIVE by Aminé', path: '/review/twopointfive', cover: 'amine.jpeg' },
   // Add more albums here
 ];
 
@@ -22,7 +24,7 @@ const Reviews = () => {
           </div>
         ))}
       </div>
-      <Link to="/" className="back-link">← Back to Home</Link>
+      <Link to="/" className="button-link">← Back to Home</Link>
     </div>
   );
 };

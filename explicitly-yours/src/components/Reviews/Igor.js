@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReviewTemplate from './ReviewTemplate';
 import { getAlbumTracks, getAlbumDetails } from '../../utils/spotify';
 
-const Graduation = () => {
+const IGOR = () => {
   const [tracks, setTracks] = useState([]);
   const [albumDetails, setAlbumDetails] = useState({ coverImage: '', spotifyLink: '' });
 
@@ -35,7 +35,7 @@ const Graduation = () => {
   useEffect(() => {
     const fetchAlbumData = async () => {
       try {
-        const albumTracks = await getAlbumTracks('Graduation', 'Kanye West');
+        const albumTracks = await getAlbumTracks('IGOR', 'Tyler, the Creator');
         const tracksWithRatingsAndThoughts = albumTracks.map((track, index) => ({
           ...track,
           rating: customRatings[index] || 0,
@@ -43,7 +43,7 @@ const Graduation = () => {
         }));
         setTracks(tracksWithRatingsAndThoughts);
 
-        const albumDetails = await getAlbumDetails('Graduation', 'Kanye West');
+        const albumDetails = await getAlbumDetails('IGOR', 'Tyler, the Creator');
         if (albumDetails) {
           setAlbumDetails(albumDetails);
         }
@@ -57,9 +57,9 @@ const Graduation = () => {
 
   return (
     <ReviewTemplate
-      albumName="Graduation"
+      albumName="IGOR"
       coverImage={albumDetails.coverImage}
-      artistName="Kanye West"
+      artistName="Tyler, the Creator"
       synopsis={`Kanye West's 'Graduation' marks a significant milestone in his illustrious career, merging his distinctive lyrical prowess with avant-garde production techniques. Released with immense anticipation, this album is celebrated for its innovative approach to blending hip-hop with elements of pop and rock. Each track on 'Graduation' showcases Kanye's versatility, starting with the reflective tones of 'Good Morning' and building up to the electrifying beats of 'Stronger'.
       The album's journey is one of artistic evolution, capturing the essence of an artist pushing the boundaries of contemporary music. Songs like 'Flashing Lights' and 'Champion' stand out with their rich orchestration and dynamic beats, creating an immersive listening experience. The production is both lush and intricate, highlighting Kanye's ability to craft music that is as complex as it is accessible.
       Yet, not every track achieves the same level of excellence. Collaborations such as 'Barry Bonds' with Lil Wayne, while noteworthy, do not quite reach the album's otherwise high standards, and 'Drunk and Hot Girls' disrupts the overall cohesiveness with its experimental approach. Despite these few missteps, 'Graduation' remains an album of remarkable replay value and sound quality.
@@ -71,4 +71,4 @@ const Graduation = () => {
   );
 };
 
-export default Graduation;
+export default IGOR;
