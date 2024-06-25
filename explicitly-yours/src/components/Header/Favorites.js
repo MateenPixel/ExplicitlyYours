@@ -5,7 +5,7 @@ import './Favorites.css';
 
 const personalFavoriteTracks = [
   { name: 'Free Fall', artist: 'Tems' },
-  { name: 'Never Stop', artist: 'ian' },
+  { name: 'Parking Lot', artist: 'Mustard' },
   { name: 'wna torture me tn?', artist: 'skaiwater' },
   { name: 'Tore Up', artist: 'Don Toliver' },
   { name: 'BAND4BAND', artist: 'Central Cee' }
