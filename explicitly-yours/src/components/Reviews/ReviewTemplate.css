@@ -126,6 +126,7 @@
   font-size: 1.8em;
   text-align: center;
   color: #1DB954; /* Spotify green for header */
+  margin-top: 10px;
 }
 
 .tracklist ul {
