@@ -2,35 +2,34 @@ import React, { useEffect, useState } from 'react';
 import ReviewTemplate from './ReviewTemplate';
 import { getAlbumTracks, getAlbumDetails } from '../../utils/spotify';
 
+const customRatings = [79, 77, 54, 74, 75, 65, 62, 69, 72, 58, 73, 59, 62, 68, 68, 56];
+const customThoughts = [
+  "Powerful opening track with an energetic vibe.",
+  "Strong hook and memorable lyrics.",
+  "Interesting collaboration but not a standout.",
+  "Great energy and flow.",
+  "Catchy and upbeat.",
+  "Solid track with good replay value.",
+  "Good production but lacks lyrical depth.",
+  "Great beat and solid performance.",
+  "Melodic and well-produced.",
+  "Not very memorable, feels like filler.",
+  "Strong closing track with lasting impact.",
+  "Catchy but not very deep.",
+  "Good collaboration with strong features.",
+  "Unique beat switch that keeps it interesting.",
+  "Solid track with good replay value.",
+  "Decent closer but could be stronger."
+];
+
+const total = customRatings.reduce((sum, rating) => sum + rating, 0);
+const avg = total / customRatings.length;
+
+export const hardstonePsychoRating = avg;
+
 const HardstonePsycho = () => {
   const [tracks, setTracks] = useState([]);
   const [albumDetails, setAlbumDetails] = useState({ coverImage: '', spotifyLink: '' });
-
-  const customRatings = [79, 77, 54, 74, 75, 65, 62, 69, 72, 58, 73, 59, 62, 68, 68, 56]; 
-  const customThoughts = [
-    "Powerful opening track with an energetic vibe.",
-    "Strong hook and memorable lyrics.",
-    "Interesting collaboration but not a standout.",
-    "Great energy and flow.",
-    "Catchy and upbeat.",
-    "Solid track with good replay value.",
-    "Good production but lacks lyrical depth.",
-    "Great beat and solid performance.",
-    "Melodic and well-produced.",
-    "Not very memorable, feels like filler.",
-    "Strong closing track with lasting impact.",
-    "Catchy but not very deep.",
-    "Good collaboration with strong features.",
-    "Unique beat switch that keeps it interesting.",
-    "Solid track with good replay value.",
-    "Decent closer but could be stronger."
-  ];
-
-  var total = 0;
-  for (var i = 0; i < customRatings.length; i++) {
-    total += customRatings[i];
-  }
-  var avg = total / customRatings.length;
 
   useEffect(() => {
     const fetchAlbumData = async () => {
