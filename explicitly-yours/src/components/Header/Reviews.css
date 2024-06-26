@@ -117,16 +117,22 @@
 
   .sort-container {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .review-list {
+    justify-content: center; /* Center the items */
   }
 
   .review-item {
-    width: 100%;
+    width: 90%; /* Make items take up most of the screen width */
     margin: 10px 0;
   }
 
   .review-cover {
-    width: 80%;
+    width: 100%; /* Ensure cover takes full width of item */
   }
+
 }
 
 @media (max-width: 480px) {
@@ -137,5 +143,9 @@
 
   .review-name {
     font-size: 1em;
+  }
+
+  .review-item {
+    width: 95%; /* Further reduce width for smaller screens */
   }
 }
