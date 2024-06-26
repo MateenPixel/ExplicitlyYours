@@ -14,7 +14,7 @@
 
 .favorites-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 20px;
   width: 100%;
 }
@@ -41,6 +41,7 @@ h2 {
 
 .favorite-track-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   background: rgba(45, 45, 45, 0.9);
   padding: 15px;
@@ -59,13 +60,15 @@ h2 {
   width: 105px;
   height: 105px;
   border-radius: 10px;
-  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 .track-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .track-name {
@@ -121,4 +124,27 @@ h2 {
 .button-link:hover {
   background-color: #1ed760; /* Lighter Spotify green */
   transform: translateY(-2px);
+}
+
+/* Mobile Styles */
+@media (min-width: 768px) {
+  .favorites-content {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .favorite-track-item {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .track-cover {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+
+  .track-info {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
