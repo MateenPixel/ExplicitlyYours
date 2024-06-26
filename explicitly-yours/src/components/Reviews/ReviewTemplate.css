@@ -112,34 +112,6 @@
   margin-top: 50px;
 }
 
-.like-button {
-  background: none;
-  border: none;
-  color: #1DB954;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: color 0.3s ease;
-  margin-top: 32px;
-  display: flex;
-  align-items: center;
-}
-
-.like-button:disabled {
-  color: #555; /* Disable color */
-  cursor: default; /* Default cursor */
-}
-
-.like-button:hover:enabled {
-  color: #1ed760;
-}
-
-.heart-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-}
-
 /* Tracklist Container */
 .tracklist {
   margin-top: 20px;
