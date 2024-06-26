@@ -126,7 +126,6 @@
   font-size: 1.8em;
   text-align: center;
   color: #1DB954; /* Spotify green for header */
-  margin-top: 10px;
 }
 
 .tracklist ul {
@@ -210,6 +209,25 @@
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
+  .album-review-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album-cover img {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .album-details {
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .rating-meter {
+    width: 100%;
+  }
+
   .tracklist {
     padding: 15px;
   }
@@ -225,10 +243,13 @@
 
   .track-name {
     font-size: 1.1em;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .track-rating {
     margin-top: 10px;
+    width: 100%;
   }
 
   .track-rating .rating-meter {
@@ -245,6 +266,10 @@
 }
 
 @media (max-width: 480px) {
+  .album-details h2 {
+    font-size: 1.5em;
+  }
+
   .tracklist h3 {
     font-size: 1.2em;
   }

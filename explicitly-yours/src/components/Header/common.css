@@ -18,4 +18,24 @@
     background-color: #1ed760; /* Lighter Spotify green */
     transform: translateY(-2px);
   }
+
+  /* common.css */
+:root {
+    --spotify-green: #1DB954;
+    --white-color: #fff;
+    --light-spotify-green: #1ed760;
+    --dark-background: rgba(15, 15, 15, 0.95);
+    --text-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .background {
+    background-color: var(--spotify-green);
+  }
+  
+  .button {
+    color: var(--white-color);
+    background-color: var(--spotify-green);
+  }
+  
   
