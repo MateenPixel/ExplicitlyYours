@@ -118,9 +118,8 @@
   margin-top: 5px;
 }
 
-/* Tracklist Container */
 .tracklist {
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 20px;
   background: #1e1e1e; /* Dark background */
   border-radius: 10px;
@@ -128,22 +127,20 @@
 }
 
 .tracklist h3 {
-  margin-bottom: 20px;
-  font-size: 1.8em;
+  margin-bottom: 30px;
+  font-size: 2em;
   text-align: center;
   color: #1DB954; /* Spotify green for header */
 }
 
 .tracklist ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
-/* Tracklist Item */
 .tracklist li {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
@@ -158,35 +155,32 @@
   transform: translateY(-2px); /* Slight upward movement on hover */
 }
 
-/* Track Information */
 .track-info {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center;
-  justify-content: center;
-  width: 100%; /* Ensure it takes full width */
+  flex: 2;
 }
 
-.track-name {
-  font-size: 1.2em;
-  color: #e0e0e0; /* Light color for track name */
+.track-info .track-name {
+  font-size: 1.35em;
+  color: #66a0f8; /* Light color for track name */
+  margin-right: 0px;
   text-align: center; /* Center align the text */
-  margin-bottom: 5px;
+  flex: 1; /* Allow flexbox to manage space */
 }
+
 
 .track-rating {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
   align-items: center;
-  width: 100%; /* Ensure it takes full width */
+  margin-left: 20px; /* Adjust spacing as needed */
 }
 
 .track-rating .rating-meter {
-  width: 80%; /* Adjust width for better spacing */
+  width: 100px;
   height: 10px;
   background: #555; /* Slightly lighter background */
   border-radius: 5px;
   position: relative;
+  margin-left: -20px;
 }
 
 .track-rating .rating-fill {
@@ -198,19 +192,18 @@
 .track-rating .rating-text {
   font-size: 0.9em;
   color: #e0e0e0;
-  margin-top: 5px;
+  margin-left: 10px;
 }
 
-/* Text Box for Description */
 .track-description {
-  width: 100%; /* Ensure it takes full width */
+  margin-left: 25px;
+  flex: 2;
   background: #222; /* Slightly lighter background for text box */
   border: 1px solid #1DB954; /* Spotify green border */
   border-radius: 5px;
   padding: 10px;
   color: #e0e0e0;
-  margin-top: 10px; /* Add margin to separate from other elements */
-  text-align: center; /* Center align the text */
+  height: 50px; /* Fixed height for text box */
   overflow-y: auto; /* Scrollable if content overflows */
   white-space: pre-wrap; /* Preserve whitespace and wrapping */
 }
@@ -241,6 +234,7 @@
     width: 200px;
   }
 
+  /* Tracklist Mobile Styles */
   .tracklist {
     padding: 15px;
   }
@@ -249,40 +243,47 @@
     font-size: 1.5em;
   }
 
-  .track-info {
+  .tracklist li {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  .track-info {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
   .track-name {
     font-size: 1.1em;
-    margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    text-align: left; /* Align text to the left for better readability */
   }
 
   .track-rating {
-    margin-top: 10px;
     width: 100%;
+    margin: 5px 0;
+    flex-direction: column; /* Stack rating meter and text vertically */
   }
 
   .track-rating .rating-meter {
     width: 100%;
     height: 8px;
+    margin: 0; /* Remove left margin */
+  }
+
+  .track-rating .rating-text {
+    margin: 5px 0 0; /* Adjust margin for better spacing */
   }
 
   .track-description {
-    margin-left: 0;
-    margin-top: 10px;
-    width: 100%;
+    width: 94%;
+    margin: 10px 0 0; /* Adjust margin for spacing */
     height: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .album-details h2 {
-    font-size: 1.5em;
-  }
-
   .tracklist h3 {
     font-size: 1.2em;
   }
@@ -293,6 +294,10 @@
 
   .track-rating .rating-meter {
     height: 8px;
+  }
+
+  .track-rating .rating-text {
+    font-size: 0.8em;
   }
 
   .track-description {
