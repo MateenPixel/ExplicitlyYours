@@ -44,6 +44,7 @@
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Image shadow */
   margin-top: 75px;
+  margin-left: 12px;
 }
 
 .spotify-button {
@@ -127,7 +128,8 @@
 }
 
 .tracklist h3 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 2em;
   text-align: center;
   color: #1DB954; /* Spotify green for header */

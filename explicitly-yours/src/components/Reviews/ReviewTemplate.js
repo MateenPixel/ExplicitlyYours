@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ReviewTemplate.css';
 
-const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating, tracks, spotifyLink }) => {
+const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating, tracks, spotifyLink, trackColor }) => {
   return (
     <div className="album-review-container">
       <div className="album-review-content">
@@ -28,7 +28,7 @@ const ReviewTemplate = ({ albumName, coverImage, artistName, synopsis, rating, t
           {tracks.map((track, index) => (
             <li key={track.id || index}>
               <div className="track-info">
-                <span className="track-name">{track.name}</span>
+                <span className="track-name" style={{ color: trackColor }}>{track.name}</span>
                 <div className="track-rating">
                   <div className="rating-meter">
                     <div className="rating-fill" style={{ width: `${track.rating}%` }}></div>
