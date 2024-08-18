@@ -1,0 +1,119 @@
+@import './common.css';
+
+.listening-to-container {
+  padding: 40px;
+  background: linear-gradient(135deg, #1f1f1f, #121212);
+  color: var(--text-color);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.description-box {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(34, 34, 34, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.description-title {
+  font-size: 2em;
+  color: var(--spotify-green);
+  margin-bottom: 15px;
+}
+
+.description-text {
+  font-size: 1.2em;
+  color: #c1c4e7;
+  line-height: 1.6;
+}
+
+.playlists-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Separation between the two columns */
+}
+
+.playlists-column {
+  flex: 1;
+  padding: 20px;
+  background: rgba(28, 28, 28, 0.9); /* Slight background difference for separation */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.playlists-section-title {
+  font-size: 1.8em;
+  color: var(--spotify-green);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.playlist-link {
+  text-decoration: none;
+}
+
+.playlist-card {
+  background: rgba(45, 45, 45, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.playlist-cover-large {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.playlist-name-grid {
+  font-size: 1.2em;
+  color: #c1c4e7;
+}
+
+@media (max-width: 768px) {
+  .listening-to-container {
+    padding: 10px;
+  }
+
+  .description-box {
+    padding: 15px;
+  }
+
+  .playlists-content {
+    flex-direction: column;
+  }
+
+  .playlists-column {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .playlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .playlist-cover-large {
+    width: 100%;
+    height: auto;
+  }
+}

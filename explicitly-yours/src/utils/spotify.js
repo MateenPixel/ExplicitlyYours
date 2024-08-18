@@ -3,7 +3,7 @@ import axios from 'axios';
 const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
-const getSpotifyAccessToken = async () => {
+export const getSpotifyAccessToken = async () => {
   try {
     const response = await axios.post('https://accounts.spotify.com/api/token', 
       new URLSearchParams({
@@ -18,6 +18,45 @@ const getSpotifyAccessToken = async () => {
   } catch (error) {
     console.error('Error fetching access token:', error);
     throw error;
+  }
+};
+
+export const getPublicPlaylist = async (playlistId) => {
+  const accessToken = await getSpotifyAccessToken();
+  if (!accessToken) return null;
+
+  try {
+    const response = await axios.get(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching playlist:', error.response ? error.response.data : error.message);
+    return null;
+  }
+};
+
+export const getRecentlyPlayedTracks = async () => {
+  const accessToken = await getSpotifyAccessToken();
+  if (!accessToken) return [];
+
+  try {
+    const response = await axios.get('https://api.spotify.com/v1/me/player/recently-played?limit=10', {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+    return response.data.items.map(item => ({
+      name: item.track.name,
+      artist: item.track.artists.map(artist => artist.name).join(', '),
+      cover: item.track.album.images[0]?.url || '',
+      spotifyLink: item.track.external_urls.spotify
+    }));
+  } catch (error) {
+    console.error('Error fetching recently played tracks:', error.response ? error.response.data : error.message);
+    return [];
   }
 };
 
@@ -121,4 +160,3 @@ export const getTrackDetails = async (trackName, artistName) => {
     return null;
   }
 };
-

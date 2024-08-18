@@ -6,7 +6,7 @@ import MainContent from './components/MainContent/MainContent';
 import AlbumList from './components/AlbumList/AlbumList';
 import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground';
 import HardstonePsycho from './components/Reviews/HardStonePsycho';
-import AboutMe from './components/Header/AboutMe';
+import ListeningTo from './components/Header/ListeningTo';
 import Reviews from './components/Header/Reviews';
 import Favorites from './components/Header/Favorites';
 import Graduation from './components/Reviews/Graduation';
@@ -25,7 +25,7 @@ function App() {
           <Route path="/review/TwoPointFive" element={<TwoPointFive />} />
           <Route path="/review/Graduation" element={<Graduation />} />
           <Route path='/review/Igor' element={<IGOR />} />
-          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/listeningto" element={<ListeningTo />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/favorites" element={<Favorites />} />
 
