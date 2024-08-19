@@ -1,4 +1,4 @@
-@import './common.css';
+
 
 .listening-to-container {
   padding: 40px;
@@ -36,7 +36,7 @@
 .playlists-content {
   display: flex;
   justify-content: space-between;
-  gap: 40px; /* Separation between the two columns */
+  gap: 75px; /* Separation between the two columns */
 }
 
 .playlists-column {
@@ -82,7 +82,6 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .playlist-name-grid {

@@ -16,10 +16,11 @@ export const getSpotifyAccessToken = async () => {
     });
     return response.data.access_token;
   } catch (error) {
-    console.error('Error fetching access token:', error);
+    console.error('Error fetching access token:', error.response ? error.response.data : error.message);
     throw error;
   }
 };
+
 
 export const getPublicPlaylist = async (playlistId) => {
   const accessToken = await getSpotifyAccessToken();
@@ -37,6 +38,7 @@ export const getPublicPlaylist = async (playlistId) => {
     return null;
   }
 };
+
 
 export const getRecentlyPlayedTracks = async () => {
   const accessToken = await getSpotifyAccessToken();
