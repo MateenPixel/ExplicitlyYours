@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import './Favorites.css';
 
 const personalFavoriteTracks = [
-  { name: 'Free Fall', artist: 'Tems' },
-  { name: 'Parking Lot', artist: 'Mustard' },
-  { name: 'wna torture me tn?', artist: 'skaiwater' },
-  { name: 'Tore Up', artist: 'Don Toliver' },
-  { name: 'BAND4BAND', artist: 'Central Cee' }
+  { name: 'Blue Green Red', artist: 'Drake' },
+  { name: 'LGLG', artist: 'Trippie Redd' },
+  { name: 'Active', artist: 'Asake' },
+  { name: 'Hate Me', artist: 'Ian' },
+  { name: 'Lifestyle', artist: 'Kanye West' }
 ];
 
 const highestRatedTracks = [
